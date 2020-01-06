@@ -73,6 +73,7 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
+    'filing_fetcher.pipelines.FilingFetcherPipeline': 200,
     'scrapy.pipelines.files.FilesPipeline': 300,
 }
 
