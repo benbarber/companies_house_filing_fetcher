@@ -9,3 +9,8 @@
 class FilingFetcherPipeline(object):
     def process_item(self, item, spider):
         return item
+
+    def file_path(self, request, response=None, info=None):
+        filename = super.file_path(self, request, response=None, info=None)
+        year = request.meta.get('Accounts.LastMadeUpDate','').split('-')[0]
+        return filename.replace("full/", "full/" + year + '_' + request.meta.get('CompanyNumber',''))
