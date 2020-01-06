@@ -73,8 +73,8 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'filing_fetcher.pipelines.FilingFetcherPipeline': 200,
-    'scrapy.pipelines.files.FilesPipeline': 300,
+    'filing_fetcher.pipelines.FilingFetcherPipeline': 300,
+    # 'scrapy.pipelines.files.FilesPipeline': 300,
 }
 
 FILES_STORE = os.path.join(os.path.expanduser('~'), 'data', 'companies_house', 'pdfs')
